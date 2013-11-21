@@ -1,3 +1,46 @@
-*** Cut and paste the for loop here ***
+Name: Steve Blank
 
+1.  What is a route, and how do you specify one in Flask?
+	A route maps URLs to application functions/locations- it's what gets returned from a get request.  
+
+2. What is the only route we've specified in our application?
+-->	@app.route('/')
+	def index():
+		return 'Index Page'
+
+3. What is the method that gets called when we hit that route?
+	@app.route('/hello')
+-->	def hello():
+-->		return 'Hello World'
+
+4. If I wanted to add a route at "/world" that printed "Hello, World" on the screen, what would that code look like?
+
+	@app.route("/world")
+	def hello():
+		return "Hello World!"
+
+5. If I create a new application and import testingflask.py (a.k.a. I am not running it directly), will code under the "if__name__=="__main__": be excecuted?  Why not?
+
+No, "__main__" refers to the default/current module- in order for it to pull correctly from testingflask.py, it would need to pull using a specific name (__testingflask__) instead.
+
+
+6. What is the 'base case' where we don't call 'blastoff' again?
+if n<=0:
+The return statement then exits the function.
+
+7. What is the 'simpler' form of our input ('n') that we pass into 'blastoff'?
+if n>0, print the number, then count down by 1, repeat until zero is reached, then print 'Blastoff!'
+
+*** Cut and paste the for loop here ***
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				<br>
+				Results:
+				<pre>
+					{% for message in messages %}
+{{message}}
+					{% endfor %}
+				</pre>
+				{% endif %}
+			{% endwith %}
 *** What is the for loop doing? ***
